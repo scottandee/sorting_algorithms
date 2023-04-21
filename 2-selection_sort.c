@@ -23,7 +23,7 @@ void selection_sort(int *array, size_t size)
 			{
 				buffer = array[j];
 				min_idx = j;
-				code = 1;
+				code = 1;/* code equals 1 means a swap occured, 0 means otherwise*/
 			}
 		}
 		if (code == 1)
