@@ -1,10 +1,18 @@
 #include "sort.h"
 
+/**
+  * quick - this is the quiick sort algorithm
+  * @array: this is the array that is to be sorted
+  * @start: this is the point at which the sorting should start
+  * @end: this is the point where the sorting should end
+  * @size: this is the size of the array
+  */
 
 void quick(int *array, int start, int end, size_t size)
 {
-	int i, j;
+	int i, j, p;
 	int buffer, pivot;
+
 	if (start >= end)
 	{
 		return;
@@ -14,7 +22,7 @@ void quick(int *array, int start, int end, size_t size)
 	j = start - 1;
 	for (i = start; i <= end - 1; i++)
 	{
-		if (array[i] < pivot)
+		if (array[i] <= pivot)
 		{
 			j += 1;
 			buffer = array[i];
@@ -26,9 +34,11 @@ void quick(int *array, int start, int end, size_t size)
 	buffer = array[end];
 	array[end] = array[j + 1];
 	array[j + 1] = buffer;
+	print_array(array, size);
+	p = j + 1;
 
-	quick(array, start, j, size);
-	quick(array, j + 2, end, size);
+	quick(array, start, p - 1, size);
+	quick(array, p + 1, end, size);
 }
 
 /**
@@ -41,10 +51,7 @@ void quick(int *array, int start, int end, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	int start = 0;
-	int end = size - 1;	
+	int end = size - 1;
 
 	quick(array, start, end, size);
-
 }
-
-
