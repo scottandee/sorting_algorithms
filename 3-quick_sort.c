@@ -53,5 +53,9 @@ void quick_sort(int *array, size_t size)
 	int start = 0;
 	int end = size - 1;
 
+	if (size < 2 || array == NULL)
+	{
+		return;
+	}
 	quick(array, start, end, size);
 }
