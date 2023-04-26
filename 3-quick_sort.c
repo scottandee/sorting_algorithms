@@ -70,5 +70,9 @@ void quick(int *array, int start, int end, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL)
+	{
+		return;
+	}
 	quick(array, 0, size - 1, size);
 }
