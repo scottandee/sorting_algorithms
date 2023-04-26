@@ -6,6 +6,7 @@
   * @start: this is the beginning of the part of the array to be partitioned
   * @end: ths is the end of the part of the array to be partitioned
   * @size: this is the size of the array
+  * Return: returns the pivot
   */
 
 int partition(int *array, int start, int end, size_t size)
